@@ -23,7 +23,9 @@ describe Interpolate::Interpolator do
     end
 
     it 'should raise an error' do
-      expect(subject.substitute @mapping, @template).to raise_error(VariableNotAssignedError)
+      expect {
+        subject.substitute @mapping, @template
+      }.to raise_error(ArgumentError)
     end
   end
 
