@@ -1,12 +1,12 @@
 require 'spec_helper'
 describe Interpolate::Interpolator do
-  subject { Interpolate::Interpolator.new }
+  subject { Interpolate::Interpolator }
 
   before do
     @mapping = { 'day'  => 'Thursday', 'name' => 'Billy' }
   end
 
-  describe '#substitute' do
+  describe '.substitute' do
     before do
       @template = '${name} has an appointment on ${day}'
     end
