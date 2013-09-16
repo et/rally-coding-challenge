@@ -12,7 +12,7 @@ describe Interpolate::Interpolator do
     end
 
     it 'should substitute the variables in the template' do
-      result = subject.substitute @mapping, @template
+      result = subject.substitute @template, @mapping
       expect(result).to eq('Billy has an appointment on Thursday')
     end
   end
@@ -24,7 +24,7 @@ describe Interpolate::Interpolator do
 
     it 'should raise an error' do
       expect {
-        subject.substitute @mapping, @template
+        subject.substitute @template, @mapping
       }.to raise_error(ArgumentError)
     end
   end
@@ -35,7 +35,7 @@ describe Interpolate::Interpolator do
     end
 
     it 'should only perform substitution on the inner variable' do
-      result = subject.substitute @mapping, @template
+      result = subject.substitute @template, @mapping
       expect(result).to eq('hello ${Billy}')
     end
   end
