@@ -39,4 +39,15 @@ describe Interpolate::Interpolator do
       expect(result).to eq('hello ${Billy}')
     end
   end
+
+  context 'when there is no variable' do
+    before do
+      @template = 'hello $$'
+    end
+
+    it 'should escape with no substitution' do
+      result = subject.substitute @template, @mapping
+      expect(result).to eq('hello $')
+    end
+  end
 end
