@@ -12,8 +12,16 @@ This needs to be somewhat robust, throwing some kind of error if a template uses
 
     ruby -v
     ruby 2.0.0p0 (2013-02-24 revision 39474) [x86_64-darwin12.2.1]
+    # Although probably every version of ruby will work
 
 ## Usage
+
+In your ruby app:
+
+    require 'lib/interpolate.rb'
+
+    Interpolate::Interpolator.substitute
+      '${name} has an appointment on ${day}', { 'day' => 'Thursday', 'name' => 'Billy' }
 
 To run tests:
 
